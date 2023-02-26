@@ -117,7 +117,7 @@ void afisarelista()
     }
     stop = y ;
     printf("\n\n\n");
-    f=fopen("/Users/didicvictor/Documents/fise.txt", "r");
+    f=fopen("fise.txt", "r");
     
          printf("                                      LISTA MEDICAMENTELOR \n");
          printf(" -----------------------------------------------------------------------------------------------------------\n");

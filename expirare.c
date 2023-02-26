@@ -46,7 +46,7 @@ m:
                printf("\nData nu este corecta\n");
                goto m;
        }
-    f=fopen("/Users/didicvictor/Documents/fise.txt", "r");
+    f=fopen("fise.txt", "r");
     printf("\n\n\n");
     printf("                                    LISTA MEDICAMENTELOR EXPIRATE \n\n");
     printf(" -----------------------------------------------------------------------------------------------------------\n");

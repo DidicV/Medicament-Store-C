@@ -9,7 +9,7 @@ void edit()
 r:
     printf("Indica denumirea: ");
     scanf("%s",denumire);
-    f=fopen("/Users/didicvictor/Documents/fise.txt", "r");
+    f=fopen("fise.txt", "r");
     fread(&lista2, sizeof(lista2), 1, f);
     fread(&ad2, sizeof(ad2),1,f);
     
@@ -42,8 +42,8 @@ r:
             goto e;
     }
 e:
-    f=fopen("/Users/didicvictor/Documents/fise.txt", "r");
-    t=fopen("/Users/didicvictor/Documents/temp.txt", "w");
+    f=fopen("fise.txt", "r");
+    t=fopen("temp.txt", "w");
     
     fread(&lista2, sizeof(lista2), 1, f);
     fread(&ad2, sizeof(ad2),1,f);
@@ -63,8 +63,8 @@ e:
     fclose(t);
      fclose(f);
 
-    f=fopen("/Users/didicvictor/Documents/fise.txt", "w");
-    t=fopen("/Users/didicvictor/Documents/temp.txt", "r");
+    f=fopen("fise.txt", "w");
+    t=fopen("temp.txt", "r");
     
        while(1)
        {
@@ -93,7 +93,7 @@ e:
     
     printf("\n");
     
-    f=fopen("/Users/didicvictor/Documents/fise.txt", "a");
+    f=fopen("fise.txt", "a");
     int option;
     
     printf("       _______________________________      \n");

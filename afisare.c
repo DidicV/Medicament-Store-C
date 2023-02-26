@@ -2,7 +2,7 @@
 void afisare()
 
 {
-      f=fopen("/Users/didicvictor/Documents/fise.txt", "r");
+      f=fopen("fise.txt", "r");
       printf("\n\n\n");
       printf("                                      LISTA MEDICAMENTELOR \n");
 

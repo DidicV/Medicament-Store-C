@@ -18,7 +18,7 @@ void sort()
     float a[n];
     int k=0, stop;
     float numar;
-    f=fopen("/Users/didicvictor/Documents/fise.txt", "r");
+    f=fopen("fise.txt", "r");
     fread(&lista2, sizeof(lista2), 1, f);
     fread(&ad1, sizeof(ad1), 1, f);
     while(!feof(f))
@@ -132,7 +132,7 @@ void sort()
             char str[30][30];
             char temp[20];
              
-            f=fopen("/Users/didicvictor/Documents/fise.txt", "r");
+            f=fopen("fise.txt", "r");
             fread(&lista2, sizeof(lista2), 1, f);
             fread(&ad1, sizeof(ad1), 1, f);
             y=0;

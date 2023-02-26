@@ -4,10 +4,9 @@ void creare()
 {
     int op;
         printf("\n");
-        f=fopen("/Users/didicvictor/Documents/fise.txt", "a");
+        f=fopen("fise.txt", "a");
         printf(" Medicament: ");
         scanf("%15s", lista1.nume);
-        fflush(stdin);  //Curata informatia din stdin
         printf(" Pretul: ");
         scanf("%f", &lista1.pret);
 n:

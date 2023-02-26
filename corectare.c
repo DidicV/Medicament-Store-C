@@ -11,8 +11,8 @@ void corectare()
     printf("Indica randul: ");
     scanf("%d", &j);
     
-    f=fopen("/Users/didicvictor/Documents/fise.txt", "r");
-    t=fopen("/Users/didicvictor/Documents/temp.txt", "w");
+    f=fopen("fise.txt", "r");
+    t=fopen("temp.txt", "w");
     
     fread(&lista2, sizeof(lista2), 1, f);
     fread(&ad2, sizeof(ad2),1,f);
@@ -31,8 +31,8 @@ void corectare()
     printf("\n");
     fclose(t);
     fclose(f);
-    f=fopen("/Users/didicvictor/Documents/fise.txt", "w");
-    t=fopen("/Users/didicvictor/Documents/temp.txt", "r");
+    f=fopen("fise.txt", "w");
+    t=fopen("temp.txt", "r");
        while(1)
        {
            ch=fgetc(t);

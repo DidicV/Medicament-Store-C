@@ -6,7 +6,7 @@ void country()
     char denumire[20];
     printf("Indica tara: ");
     scanf("%s",denumire);
-    f=fopen("/Users/didicvictor/Documents/fise.txt", "r");
+    f=fopen("fise.txt", "r");
     printf("\n\n\n");
     printf("                                       MEDICAMENTUL SELECTAT \n");
     printf(" -----------------------------------------------------------------------------------------------------------\n");

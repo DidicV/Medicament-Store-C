@@ -20,7 +20,7 @@ m:
        }
        if(lunaa==4  || lunaa==6 || lunaa==9 || lunaa==11 )
        {
-           if(lista1.zi>30)
+           if(medicament.zi>30)
            {
            printf("\nData nu este corecta\n");
            goto m;
@@ -48,71 +48,69 @@ m:
        }
     f=fopen("fise.txt", "r");
     printf("\n\n\n");
-    printf("                                    LISTA MEDICAMENTELOR EXPIRATE \n\n");
+    printf("                                    medicamentMEDICAMENTELOR EXPIRATE \n\n");
     printf(" -----------------------------------------------------------------------------------------------------------\n");
     printf(" |  Nr  |     Medicament     |   Producator   |  Pret  |    Expira     |    ID   |   Compania   | Mlgm / Ml|\n");
     printf(" ___________________________________________________________________________________________________________\n");
     i = 1;
-    fread(&lista2, sizeof(lista2), 1, f);
-    fread(&ad1, sizeof(ad1), 1, f);
+    fread(&medicament, sizeof(medicament), 1, f);
     while(!feof(f))
     {
-        if((lista2.an)<anul)
+        if((medicament.an)<anul)
         {
            printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
                             i++,
-                            lista2.nume,
-                            lista2.tara,
-                            lista2.pret,
-                            lista2.zi,
-                            lista2.luna,
-                            lista2.an,
-                            ad1.ID,
-                            ad1.company,
-                            ad1.mlgr
+                            medicament.nume,
+                            medicament.tara,
+                            medicament.pret,
+                            medicament.zi,
+                            medicament.luna,
+                            medicament.an,
+                            medicament.ID,
+                            medicament.company,
+                            medicament.mlgr
                             );
    printf(" -----------------------------------------------------------------------------------------------------------\n");
         }
-        else if((lista2.an)==anul)
+        else if((medicament.an)==anul)
         {
-            if((lista2.luna)<lunaa)
+            if((medicament.luna)<lunaa)
             {
                 printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
                                          i++,
-                                         lista2.nume,
-                                         lista2.tara,
-                                         lista2.pret,
-                                         lista2.zi,
-                                         lista2.luna,
-                                         lista2.an,
-                                         ad1.ID,
-                                         ad1.company,
-                                         ad1.mlgr
+                                         medicament.nume,
+                                         medicament.tara,
+                                         medicament.pret,
+                                         medicament.zi,
+                                         medicament.luna,
+                                         medicament.an,
+                                         medicament.ID,
+                                         medicament.company,
+                                         medicament.mlgr
                                          );
                  printf(" -----------------------------------------------------------------------------------------------------------\n");
             }
         }
-        if((lista2.luna)==lunaa && (lista2.an)==anul)
+        if((medicament.luna)==lunaa && (medicament.an)==anul)
         {
-            if((lista2.zi)<=ziuaa)
+            if((medicament.zi)<=ziuaa)
             {
                 printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
                                          i++,
-                                         lista2.nume,
-                                         lista2.tara,
-                                         lista2.pret,
-                                         lista2.zi,
-                                         lista2.luna,
-                                         lista2.an,
-                                         ad1.ID,
-                                         ad1.company,
-                                         ad1.mlgr
+                                         medicament.nume,
+                                         medicament.tara,
+                                         medicament.pret,
+                                         medicament.zi,
+                                         medicament.luna,
+                                         medicament.an,
+                                         medicament.ID,
+                                         medicament.company,
+                                         medicament.mlgr
                                          );
                  printf(" -----------------------------------------------------------------------------------------------------------\n");
             }
         }
-         fread(&lista2, sizeof(lista2),1,f);
-         fread(&ad1, sizeof(ad1), 1, f);
+         fread(&medicament, sizeof(medicament),1,f);
     }
     printf("\n");
      fclose(f);

@@ -14,19 +14,16 @@ void corectare()
     f=fopen("fise.txt", "r");
     t=fopen("temp.txt", "w");
     
-    fread(&lista2, sizeof(lista2), 1, f);
-    fread(&ad2, sizeof(ad2),1,f);
+    fread(&medicament, sizeof(medicament), 1, f);
     
     while(!feof(f))
     {
         if(j != i)
         {
-            fwrite(&lista2, sizeof(lista2), 1, t);
-            fwrite(&ad2, sizeof(ad2), 1, t);
+            fwrite(&medicament, sizeof(medicament), 1, t);
         }
         i++;
-         fread(&lista2, sizeof(lista2),1,f);
-         fread(&ad2, sizeof(ad2),1,f);
+         fread(&medicament, sizeof(medicament),1,f);
     }
     printf("\n");
     fclose(t);

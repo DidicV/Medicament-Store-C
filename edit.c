@@ -10,27 +10,25 @@ r:
     printf("Indica denumirea: ");
     scanf("%s",denumire);
     f=fopen("fise.txt", "r");
-    fread(&lista2, sizeof(lista2), 1, f);
-    fread(&ad2, sizeof(ad2),1,f);
+    fread(&medicament, sizeof(medicament), 1, f);
     
     while(!feof(f))
     {
-        if(strcmp(lista2.nume, denumire)==0)
+        if(strcmp(medicament.nume, denumire)==0)
         {
-            day = lista2.zi;
-            month = lista2.luna;
-            year = lista2.an;
-            price = lista2.pret;
-            strcpy(nome, lista2.nume);
-            strcpy(pays, lista2.tara);
-            di = ad2.ID;
-            strcpy(comp, ad2.company);
-            mg = ad2.mlgr;
+            day = medicament.zi;
+            month = medicament.luna;
+            year = medicament.an;
+            price = medicament.pret;
+            strcpy(nome, medicament.nume);
+            strcpy(pays, medicament.tara);
+            di = medicament.ID;
+            strcpy(comp, medicament.company);
+            mg = medicament.mlgr;
             
             ctrl++;
         }
-         fread(&lista2, sizeof(lista2),1,f);
-         fread(&ad2, sizeof(ad2),1,f);
+         fread(&medicament, sizeof(medicament),1,f);
     }
     fclose(f);
     switch (ctrl)
@@ -45,19 +43,16 @@ e:
     f=fopen("fise.txt", "r");
     t=fopen("temp.txt", "w");
     
-    fread(&lista2, sizeof(lista2), 1, f);
-    fread(&ad2, sizeof(ad2),1,f);
+    fread(&medicament, sizeof(medicament), 1, f);
     while(!feof(f))
     {
-        if(strcmp(lista2.nume, denumire)!=0)
+        if(strcmp(medicament.nume, denumire)!=0)
         {
             
-          fwrite(&lista2, sizeof(lista2), 1, t);
-          fwrite(&ad2, sizeof(ad2), 1, t);
+          fwrite(&medicament, sizeof(medicament), 1, t);
         }
         
-         fread(&lista2, sizeof(lista2),1,f);
-         fread(&ad2, sizeof(ad2),1,f);
+         fread(&medicament, sizeof(medicament),1,f);
     }
     printf("\n");
     fclose(t);
@@ -119,139 +114,139 @@ e:
     {
     printf("Introdu numele corect: ");
     scanf("%s", numele);
-    strcpy(lista1.nume, numele);
-    strcpy(lista1.tara, pays);
-    lista1.zi = day;
-    lista1.luna = month;
-    lista1.an = year;
-    lista1.pret = price;
-    ad1.ID = di;
-    strcpy(ad1.company, comp);
-    ad1.mlgr = mg;
+    strcpy(medicament.nume, numele);
+    strcpy(medicament.tara, pays);
+    medicament.zi = day;
+    medicament.luna = month;
+    medicament.an = year;
+    medicament.pret = price;
+    medicament.ID = di;
+    strcpy(medicament.company, comp);
+    medicament.mlgr = mg;
     }
     
     else if(option == 2)
     {
     printf("Introdu tara corecta: ");
     scanf("%s", numele);
-    strcpy(lista1.nume, nome);
-    strcpy(lista1.tara, numele);
-    lista1.zi = day;
-    lista1.luna = month;
-    lista1.an = year;
-    lista1.pret = price;
-    ad1.ID = di;
-    strcpy(ad1.company, comp);
-    ad1.mlgr = mg;
+    strcpy(medicament.nume, nome);
+    strcpy(medicament.tara, numele);
+    medicament.zi = day;
+    medicament.luna = month;
+    medicament.an = year;
+    medicament.pret = price;
+    medicament.ID = di;
+    strcpy(medicament.company, comp);
+    medicament.mlgr = mg;
     }
     
     else if(option == 3)
     {
     printf("Introdu pretul corect: ");
     scanf("%f", &pretul);
-    strcpy(lista1.nume, nome);
-    strcpy(lista1.tara, pays);
-    lista1.zi = day;
-    lista1.luna = month;
-    lista1.an = year;
-    lista1.pret = pretul;
-    ad1.ID = di;
-    strcpy(ad1.company, comp);
-    ad1.mlgr = mg;
+    strcpy(medicament.nume, nome);
+    strcpy(medicament.tara, pays);
+    medicament.zi = day;
+    medicament.luna = month;
+    medicament.an = year;
+    medicament.pret = pretul;
+    medicament.ID = di;
+    strcpy(medicament.company, comp);
+    medicament.mlgr = mg;
     }
     
     else if(option == 4)
     {
     printf("Introdu ziua corecta: ");
     scanf("%d", &index);
-    strcpy(lista1.nume, nome);
-    strcpy(lista1.tara, pays);
-    lista1.zi = index;
-    lista1.luna = month;
-    lista1.an = year;
-    lista1.pret = price;
-    ad1.ID = di;
-    strcpy(ad1.company, comp);
-    ad1.mlgr = mg;
+    strcpy(medicament.nume, nome);
+    strcpy(medicament.tara, pays);
+    medicament.zi = index;
+    medicament.luna = month;
+    medicament.an = year;
+    medicament.pret = price;
+    medicament.ID = di;
+    strcpy(medicament.company, comp);
+    medicament.mlgr = mg;
     }
     
     else if(option == 5)
     {
     printf("Introdu luna corecta: ");
     scanf("%d", &index);
-    strcpy(lista1.nume, nome);
-    strcpy(lista1.tara, pays);
-    lista1.zi = day;
-    lista1.luna = index;
-    lista1.an = year;
-    lista1.pret = price;
-    ad1.ID = di;
-    strcpy(ad1.company, comp);
-    ad1.mlgr = mg;
+    strcpy(medicament.nume, nome);
+    strcpy(medicament.tara, pays);
+    medicament.zi = day;
+    medicament.luna = index;
+    medicament.an = year;
+    medicament.pret = price;
+    medicament.ID = di;
+    strcpy(medicament.company, comp);
+    medicament.mlgr = mg;
     }
     
     else if(option == 6)
        {
        printf("Introdu anul corect: ");
        scanf("%d", &index);
-       strcpy(lista1.nume, nome);
-       strcpy(lista1.tara, pays);
-       lista1.zi = day;
-       lista1.luna = month;
-       lista1.an = index;
-       lista1.pret = price;
-       ad1.ID = di;
-       strcpy(ad1.company, comp);
-       ad1.mlgr = mg;
+       strcpy(medicament.nume, nome);
+       strcpy(medicament.tara, pays);
+       medicament.zi = day;
+       medicament.luna = month;
+       medicament.an = index;
+       medicament.pret = price;
+       medicament.ID = di;
+       strcpy(medicament.company, comp);
+       medicament.mlgr = mg;
        }
     
     else if(option == 7)
        {
        printf("Introdu ID-ul corect: ");
        scanf("%d", &index);
-       strcpy(lista1.nume, nome);
-       strcpy(lista1.tara, pays);
-       lista1.zi = day;
-       lista1.luna = month;
-       lista1.an = year;
-       lista1.pret = price;
-       ad1.ID = index;
-       strcpy(ad1.company, comp);
-       ad1.mlgr = mg;
+       strcpy(medicament.nume, nome);
+       strcpy(medicament.tara, pays);
+       medicament.zi = day;
+       medicament.luna = month;
+       medicament.an = year;
+       medicament.pret = price;
+       medicament.ID = index;
+       strcpy(medicament.company, comp);
+       medicament.mlgr = mg;
        }
     
     if(option == 8)
     {
     printf("Introdu compania corecta: ");
     scanf("%s", numele);
-    strcpy(lista1.nume, nome);
-    strcpy(lista1.tara, pays);
-    lista1.zi = day;
-    lista1.luna = month;
-    lista1.an = year;
-    lista1.pret = price;
-    ad1.ID = di;
-    strcpy(ad1.company, numele);
-    ad1.mlgr = mg;
+    strcpy(medicament.nume, nome);
+    strcpy(medicament.tara, pays);
+    medicament.zi = day;
+    medicament.luna = month;
+    medicament.an = year;
+    medicament.pret = price;
+    medicament.ID = di;
+    strcpy(medicament.company, numele);
+    medicament.mlgr = mg;
     }
     
     else if(option == 9)
        {
        printf("Introdu masa Mlgr corect: ");
        scanf("%d", &index);
-       strcpy(lista1.nume, nome);
-       strcpy(lista1.tara, pays);
-       lista1.zi = day;
-       lista1.luna = month;
-       lista1.an = index;
-       lista1.pret = price;
-       ad1.ID = di;
-       strcpy(ad1.company, comp);
-       ad1.mlgr = index;
+       strcpy(medicament.nume, nome);
+       strcpy(medicament.tara, pays);
+       medicament.zi = day;
+       medicament.luna = month;
+       medicament.an = index;
+       medicament.pret = price;
+       medicament.ID = di;
+       strcpy(medicament.company, comp);
+       medicament.mlgr = index;
        }
     
-    fwrite(&lista1, sizeof(lista1), 1, f);
-    fwrite(&ad1, sizeof(ad1), 1, f);
+    fwrite(&medicament, sizeof(medicament), 1, f);
+    fwrite(&medicament, sizeof(medicament), 1, f);
     
     printf("\n\n\n\n\n");
     fclose(f);

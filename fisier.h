@@ -1,21 +1,21 @@
 FILE *f;
 FILE *t;
-struct medicament
-{
-char nume[15];
-char tara[20];
-int zi;
-int luna;
-int an;
-float pret;
-}lista1, lista2;
 
-struct nume
+struct Medicament
 {
-    int ID;
+	int ID;
+	char nume[15];
+	char tara[20];
+	int zi;
+	int luna;
+	int an;
+	float pret;
     char company[15];
     int mlgr;
-}ad1, ad2;
+
+} medicament;
+
+
 
 struct linked_list
 {

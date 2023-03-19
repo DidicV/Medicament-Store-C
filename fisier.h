@@ -36,7 +36,7 @@ int i, n;
 #include "afisare.c"
 #include "selectare.c"
 #include "expirare.c"
-#include "corectare.c"
+#include "stergere.c"
 #include "country.c"
 #include "edit.c"
 #include "sort.c"

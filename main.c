@@ -45,7 +45,7 @@ int main()
                 break;
 
             case 5: 
-                corectare(); 
+                stergere(); 
                 break;
 
             case 6: 

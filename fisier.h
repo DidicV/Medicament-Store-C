@@ -12,17 +12,16 @@ struct Medicament
 	float pret;
     char company[15];
     int mlgr;
-
 } medicament;
-
-
 
 struct linked_list
 {
     int numar;
     struct linked_list *urm;
 };
+
 typedef struct linked_list node;
+
 node *head=NULL, *last=NULL;
 
 int anul, lunaa, ziuaa, di, contor;
@@ -42,5 +41,3 @@ int i, n;
 #include "edit.c"
 #include "sort.c"
 #include "liste.c"
-
-

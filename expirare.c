@@ -1,51 +1,18 @@
 #include <stdio.h>
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
+
 void expirare()
 {
-m:
-    printf("\n Introduceti data actuala\n\n");
-    printf(" Indica ziua: ");
-    scanf("%d",&ziuaa);
-    printf(" Indica luna: ");
-    scanf("%d",&lunaa);
-    printf(" Indica anul: ");
-    scanf("%d",&anul);
-    if(lunaa > 12 || lunaa < 1)
-       {
-           {
-           printf("\nData nu este corecta\n");
-           goto m;
-           }
-       }
-       if(lunaa==4  || lunaa==6 || lunaa==9 || lunaa==11 )
-       {
-           if(medicament.zi>30)
-           {
-           printf("\nData nu este corecta\n");
-           goto m;
-           }
-       }
-       if(lunaa==1 || lunaa==3  || lunaa==5 || lunaa==7 || lunaa==8 || lunaa==10 || lunaa==12  )
-       {
-           if(ziuaa>31)
-           {
-           printf("\nData nu este corecta\n");
-           goto m;
-           }
-       }
-        if((anul % 4)==0 && lunaa==2 && ziuaa>29)
-       {
-          //Bisect
-               printf("\nData nu este corecta\n");
-               goto m;
-       }
-        else if((anul % 4)!=0 && lunaa==2 && ziuaa>28)
-       {
-          //nu e bisect
-               printf("\nData nu este corecta\n");
-               goto m;
-       }
+    time_t now = time(NULL);           // Get the current time
+    struct tm *t = localtime(&now);    // Convert to local time
+
+    int anul = t->tm_year + 1900;      // Get the year (since 1900)
+    int lunaa = t->tm_mon + 1;         // Get the month (0 - 11, add 1 to get 1 - 12)
+    int ziuaa = t->tm_mday;            // Get the day of the month (1 - 31)
+
+
     f=fopen("fise.txt", "r");
     printf("\n\n\n");
     printf("                                    medicamentMEDICAMENTELOR EXPIRATE \n\n");
@@ -54,41 +21,40 @@ m:
     printf(" ___________________________________________________________________________________________________________\n");
     i = 1;
     fread(&medicament, sizeof(medicament), 1, f);
+    
     while(!feof(f))
     {
         if((medicament.an)<anul)
         {
-           printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
-                            i++,
-                            medicament.nume,
-                            medicament.tara,
-                            medicament.pret,
-                            medicament.zi,
-                            medicament.luna,
-                            medicament.an,
-                            medicament.ID,
-                            medicament.company,
-                            medicament.mlgr
-                            );
-   printf(" -----------------------------------------------------------------------------------------------------------\n");
+            printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
+            i++,
+            medicament.nume,
+            medicament.tara,
+            medicament.pret,
+            medicament.zi,
+            medicament.luna,
+            medicament.an,
+            medicament.ID,
+            medicament.company,
+            medicament.mlgr);
+            printf(" -----------------------------------------------------------------------------------------------------------\n");
         }
         else if((medicament.an)==anul)
         {
             if((medicament.luna)<lunaa)
             {
                 printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
-                                         i++,
-                                         medicament.nume,
-                                         medicament.tara,
-                                         medicament.pret,
-                                         medicament.zi,
-                                         medicament.luna,
-                                         medicament.an,
-                                         medicament.ID,
-                                         medicament.company,
-                                         medicament.mlgr
-                                         );
-                 printf(" -----------------------------------------------------------------------------------------------------------\n");
+                i++,
+                medicament.nume,
+                medicament.tara,
+                medicament.pret,
+                medicament.zi,
+                medicament.luna,
+                medicament.an,
+                medicament.ID,
+                medicament.company,
+                medicament.mlgr);
+                printf(" -----------------------------------------------------------------------------------------------------------\n");
             }
         }
         if((medicament.luna)==lunaa && (medicament.an)==anul)
@@ -96,24 +62,21 @@ m:
             if((medicament.zi)<=ziuaa)
             {
                 printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
-                                         i++,
-                                         medicament.nume,
-                                         medicament.tara,
-                                         medicament.pret,
-                                         medicament.zi,
-                                         medicament.luna,
-                                         medicament.an,
-                                         medicament.ID,
-                                         medicament.company,
-                                         medicament.mlgr
-                                         );
-                 printf(" -----------------------------------------------------------------------------------------------------------\n");
+                i++,
+                medicament.nume,
+                medicament.tara,
+                medicament.pret,
+                medicament.zi,
+                medicament.luna,
+                medicament.an,
+                medicament.ID,
+                medicament.company,
+                medicament.mlgr);
+                printf(" -----------------------------------------------------------------------------------------------------------\n");
             }
         }
-         fread(&medicament, sizeof(medicament),1,f);
+        fread(&medicament, sizeof(medicament),1,f);
     }
     printf("\n");
-     fclose(f);
+    fclose(f);
 }
-
-

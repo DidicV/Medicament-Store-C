@@ -61,7 +61,8 @@ int main()
                 break;
 
             case 9: 
-                listenod();break;
+                listenod();
+                break;
 
             case 0: 
                 exit(0);

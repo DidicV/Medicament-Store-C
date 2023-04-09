@@ -23,7 +23,7 @@ void adsfarsit(int value)
 
 void crearelista()
 {
-    int val,i,n;
+    int value,i,n;
     printf("Indica nr de noduri: ");
     scanf("%d",&n);
 
@@ -31,14 +31,14 @@ void crearelista()
     {
         p:
         printf("Nodul %d -> ",i+1);
-        scanf("%d",&val);
+        scanf("%d",&value);
 
-        if(val>contor)
+        if(value>contor)
         {
             printf("Valoarea nu exista in lista!\n");
             goto p;
         }
-        adsfarsit(val);
+        adsfarsit(value);
     }
 }
 
@@ -91,6 +91,7 @@ void stergenumar(int value)
         printf("Valoarea nu exista in lista!\n");
         goto q;
     }
+
     while(myNode!=NULL)
     {
         if(myNode->numar==value)
@@ -111,6 +112,7 @@ void stergenumar(int value)
         previous = myNode;
         myNode = myNode->urm;
     }
+
     if(flag==0)
     {
         printf("Nodul nu a fost gasit!\n");
@@ -119,19 +121,19 @@ void stergenumar(int value)
 
 void afisarelista()
 {
-    int abp[100];
+    int medicament_list[100];
     int y=0;
-    int stop;
+    int n;
     node *myList;
     myList = head;
 
     while(myList!=NULL)
     {
-        abp[y] = myList->numar;
+        medicament_list[y] = myList->numar;
         myList = myList->urm;
         y++;
     }
-    stop = y;
+    n = y;
     printf("\n\n\n");
 
     f=fopen("fise.txt", "r");
@@ -139,7 +141,7 @@ void afisarelista()
     printf(" -----------------------------------------------------------------------------------------------------------\n");
     printf(" |  Nr  |     Medicament     |   Producator   |  Pret  |    Expira     |    ID   |   Compania   | Mlgm / Ml|\n");
     printf(" ___________________________________________________________________________________________________________\n");
-    for(y=0; y<stop; y++)
+    for(y=0; y<n; y++)
     {
         i = 1;
         fseek(f, 0, SEEK_SET);
@@ -147,7 +149,7 @@ void afisarelista()
 
         while(!feof(f))
         {
-            if(abp[y] == i)
+            if(medicament_list[y] == i)
             {
                 printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
                 i++,

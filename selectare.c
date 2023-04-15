@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 void selectare()
 {
@@ -23,7 +24,11 @@ void selectare()
 
     while(!feof(f))
     {
-        if(strcmp(medicament.nume, denumire)==0)
+        for (int i = 0; medicament.nume[i]; i++) {
+            medicament.nume[i] = tolower(medicament.nume[i]);
+        }
+
+        if(strstr(medicament.nume, denumire) != NULL)
         {
             printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
             i++,
@@ -38,7 +43,6 @@ void selectare()
             medicament.mlgr);
             printf(" -----------------------------------------------------------------------------------------------------------\n");
             ctrl++;
-            break;
         }
         fread(&medicament, sizeof(medicament),1,f);
     }

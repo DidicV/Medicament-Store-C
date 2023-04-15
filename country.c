@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+
 void country()
 {
     char denumire[20];
@@ -22,7 +24,11 @@ void country()
 
     while(!feof(f))
     {
-        if(strcmp(medicament.tara, denumire)==0)
+        for (int i = 0; medicament.tara[i]; i++) {
+            medicament.tara[i] = tolower(medicament.tara[i]);
+        }
+
+        if(strstr(medicament.tara, denumire) != NULL)
         {
             printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
             i++,

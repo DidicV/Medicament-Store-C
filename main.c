@@ -14,10 +14,10 @@ int main()
         printf("            |_______________________________________________________|      \n");
         printf("            |         1  - Adauga medicament                        |      \n");
         printf("            |         2  - Afisarea listei                          |      \n");
-        printf("            |         3  - Afisarea selectiva                       |      \n");
+        printf("            |         3  - Cautare dupa nume                        |      \n");
         printf("            |         4  - Afisare medicamente expirate             |      \n");
         printf("            |         5  - Stergerea selectata                      |      \n");
-        printf("            |         6  - Medicamente din tara selectata           |      \n");
+        printf("            |         6  - Cautare dupa tara                        |      \n");
         printf("            |         7  - Corectarea medicamentului                |      \n");
         printf("            |         8  - Sortarea medicamentelor                  |      \n");
         printf("            |         9  - Liste si noduri                          |      \n");

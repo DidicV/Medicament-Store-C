@@ -6,7 +6,8 @@
 void selectare()
 {
     char denumire[20];
-    int ctrl=0;
+    int nr_elemente = 0;
+
     printf("\n");
     printf(" Indica denumirea: ");
     scanf("%s",denumire);
@@ -24,7 +25,9 @@ void selectare()
 
     while(!feof(f))
     {
-        for (int i = 0; medicament.nume[i]; i++) {
+        // toate literele le aduce la minuscule
+        for (int i = 0; medicament.nume[i]; i++) 
+        {
             medicament.nume[i] = tolower(medicament.nume[i]);
         }
 
@@ -42,14 +45,14 @@ void selectare()
             medicament.company,
             medicament.mlgr);
             printf(" -----------------------------------------------------------------------------------------------------------\n");
-            ctrl++;
+            nr_elemente++;
         }
         fread(&medicament, sizeof(medicament),1,f);
     }
 
     fclose(f);
 
-    if(ctrl==0)
+    if(nr_elemente==0)
     {
         printf("Nu exista asa medicament!\n");
     }

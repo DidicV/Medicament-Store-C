@@ -8,14 +8,14 @@ void expirare()
     time_t now = time(NULL);           // Get the current time
     struct tm *t = localtime(&now);    // Convert to local time
 
-    int anul = t->tm_year + 1900;      // Get the year (since 1900)
-    int lunaa = t->tm_mon + 1;         // Get the month (0 - 11, add 1 to get 1 - 12)
-    int ziuaa = t->tm_mday;            // Get the day of the month (1 - 31)
+    int anul = t->tm_year + 1900;      // Get the year
+    int luna = t->tm_mon + 1;         // Get the month
+    int ziua = t->tm_mday;            // Get the day of the month
 
 
     f=fopen("fise.txt", "r");
     printf("\n\n\n");
-    printf("                                    medicamentMEDICAMENTELOR EXPIRATE \n\n");
+    printf("                                    MEDICAMENTE EXPIRATE (Data curenta: %d/%d/%d)\n\n", ziua, luna, anul);
     printf(" -----------------------------------------------------------------------------------------------------------\n");
     printf(" |  Nr  |     Medicament     |   Producator   |  Pret  |    Expira     |    ID   |   Compania   | Mlgm / Ml|\n");
     printf(" ___________________________________________________________________________________________________________\n");
@@ -41,7 +41,7 @@ void expirare()
         }
         else if((medicament.an)==anul)
         {
-            if((medicament.luna)<lunaa)
+            if((medicament.luna)<luna)
             {
                 printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
                 i++,
@@ -57,9 +57,9 @@ void expirare()
                 printf(" -----------------------------------------------------------------------------------------------------------\n");
             }
         }
-        if((medicament.luna)==lunaa && (medicament.an)==anul)
+        if((medicament.luna)==luna && (medicament.an)==anul)
         {
-            if((medicament.zi)<=ziuaa)
+            if((medicament.zi)<=ziua)
             {
                 printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
                 i++,

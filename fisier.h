@@ -31,7 +31,9 @@ char pays[15];
 char nome[20];
 char comp[15];
 int i, n;
+int option;
 
+#include "show.c"
 #include "creare.c"
 #include "afisare.c"
 #include "selectare.c"

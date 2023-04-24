@@ -33,18 +33,7 @@ void country()
 
         if(strstr(medicament.tara, denumire) != NULL)
         {
-            printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
-            i++,
-            medicament.nume,
-            medicament.tara,
-            medicament.pret,
-            medicament.zi,
-            medicament.luna,
-            medicament.an,
-            medicament.ID,
-            medicament.company,
-            medicament.mlgr);
-            printf(" -----------------------------------------------------------------------------------------------------------\n");
+            show_medicament(medicament);
 
             nr_elemente++;
         }

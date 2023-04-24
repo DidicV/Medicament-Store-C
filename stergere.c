@@ -26,12 +26,12 @@ void stergere()
         fread(&medicament, sizeof(medicament),1,f);
     }
 
-    printf("\n");
     fclose(t);
     fclose(f);
 
-    f=fopen("fise.txt", "w");
-    t=fopen("temp.txt", "r");
+    f = fopen("fise.txt", "w");
+    t = fopen("temp.txt", "r");
+
     while(1)
     {
         ch = fgetc(t);
@@ -45,6 +45,7 @@ void stergere()
             fputc(ch, f);
         }
     }
+    
     printf("\n");
     printf("STERGERE CU SUCCES\n");
     fclose(t);

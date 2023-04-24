@@ -6,13 +6,13 @@ void stergere()
 {
     char ch;
     int j;
-    i=1;
+    i = 1;
     printf("\n");
     printf("Indica randul: ");
     scanf("%d", &j);
 
-    f=fopen("fise.txt", "r");
-    t=fopen("temp.txt", "w");
+    f = fopen("fise.txt", "r");
+    t = fopen("temp.txt", "w");
 
     fread(&medicament, sizeof(medicament), 1, f);
 
@@ -34,9 +34,9 @@ void stergere()
     t=fopen("temp.txt", "r");
     while(1)
     {
-        ch=fgetc(t);
+        ch = fgetc(t);
         
-        if(ch==EOF)
+        if(ch == EOF)
         {
             break;
         }

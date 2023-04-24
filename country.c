@@ -12,7 +12,7 @@ void country()
     printf(" Indica tara: ");
     scanf("%s",denumire);
 
-    f=fopen("fise.txt", "r");
+    f = fopen("fise.txt", "r");
 
     printf("\n\n\n");
     printf("                                        MEDICAMENTUL SELECTAT \n");
@@ -53,7 +53,7 @@ void country()
 
     fclose(f);
 
-    if(nr_elemente ==0)
+    if(nr_elemente == 0)
     {
         printf("Nu exista medicament din aceasta tara\n");
     }

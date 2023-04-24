@@ -52,7 +52,7 @@ void selectare()
 
     fclose(f);
 
-    if(nr_elemente==0)
+    if(nr_elemente == 0)
     {
         printf("Nu exista asa medicament!\n");
     }

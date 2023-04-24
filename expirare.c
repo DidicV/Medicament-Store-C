@@ -24,20 +24,20 @@ void expirare()
     
     while(!feof(f))
     {
-        if((medicament.an)<anul)
+        if((medicament.an) < anul)
         {
             show_medicament(medicament);
         }
-        else if((medicament.an)==anul)
+        else if((medicament.an) == anul)
         {
-            if((medicament.luna)<luna)
+            if((medicament.luna) < luna)
             {
                 show_medicament(medicament);
             }
         }
-        if((medicament.luna)==luna && (medicament.an)==anul)
+        if((medicament.luna) == luna && (medicament.an) == anul)
         {
-            if((medicament.zi)<=ziua)
+            if((medicament.zi) <= ziua)
             {
                 show_medicament(medicament);
             }

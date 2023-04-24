@@ -5,7 +5,7 @@ void creare()
 {
     int option;
 
-    f=fopen("fise.txt", "a");
+    f = fopen("fise.txt", "a");
 
     printf(" Medicament: ");
     scanf("%15s", medicament.nume);
@@ -55,19 +55,19 @@ void creare()
     {
         strcpy(medicament.tara, "Rusia");
     }
-    else if(option==7)
+    else if(option == 7)
     {
         strcpy(medicament.tara, "Anglia");
     }
-    else if(option==8)
+    else if(option == 8)
     {
         strcpy(medicament.tara, "Italia");
     }
-    else if(option==9)
+    else if(option == 9)
     {
         strcpy(medicament.tara, "Spania");
     }
-    else if(option==0)
+    else if(option == 0)
     {
         strcpy(medicament.tara, "Ausria");
     }
@@ -93,32 +93,32 @@ void creare()
         goto m;
     }
 
-    if(medicament.luna==4  || medicament.luna==6 || medicament.luna==9 || medicament.luna==11)
+    if(medicament.luna == 4  || medicament.luna == 6 || medicament.luna == 9 || medicament.luna == 11)
     {
-        if(medicament.zi>30 || medicament.zi < 1)
+        if(medicament.zi > 30 || medicament.zi < 1)
         {
             printf("\nData nu este corecta\n");
             goto m;
         }
     }
 
-    if(medicament.luna==1 || medicament.luna==3  || medicament.luna==5 || medicament.luna==7 || medicament.luna==8 || medicament.luna==10 || medicament.luna==12)
+    if(medicament.luna == 1 || medicament.luna == 3  || medicament.luna == 5 || medicament.luna == 7 || medicament.luna == 8 || medicament.luna == 10 || medicament.luna==12)
     {
-        if(medicament.zi>31 || medicament.zi < 1)
+        if(medicament.zi > 31 || medicament.zi < 1)
         {
             printf("\nData nu este corecta\n");
             goto m;
         }
     }
 
-    if((medicament.an % 4)==0 && medicament.luna==2 && medicament.zi>29)
+    if((medicament.an % 4) == 0 && medicament.luna == 2 && medicament.zi > 29)
     {
         //Bisect
         printf("\nData nu este corecta\n");
         goto m;
     }
 
-    if((medicament.an % 4)!=0 && medicament.luna==2 && medicament.zi>28)
+    if((medicament.an % 4) != 0 && medicament.luna == 2 && medicament.zi > 28)
     {
         //nu e bisect
         printf("\nData nu este corecta\n");

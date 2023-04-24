@@ -9,21 +9,21 @@ void adsfarsit(int value)
     temp_node->numar=value;
     temp_node->urm=NULL;
 
-    if(head==NULL)
+    if(head == NULL)
     {
-        head=temp_node;
-        last=temp_node;
+        head = temp_node;
+        last = temp_node;
     }
     else
     {
-        last->urm=temp_node;
-        last=temp_node;
+        last->urm = temp_node;
+        last = temp_node;
     }
 }
 
 void crearelista()
 {
-    int value,i,n;
+    int value, i, n;
     printf("Indica nr de noduri: ");
     scanf("%d",&n);
 
@@ -33,7 +33,7 @@ void crearelista()
         printf("Nodul %d -> ",i+1);
         scanf("%d",&value);
 
-        if(value>contor)
+        if(value > contor)
         {
             printf("Valoarea nu exista in lista!\n");
             goto p;
@@ -45,7 +45,7 @@ void crearelista()
 void adinceput(int value)
 {
     node *temp_node = (node *) malloc(sizeof(node));
-    temp_node->numar=value;
+    temp_node->numar = value;
     temp_node->urm = head;
     head = temp_node;
 }
@@ -57,7 +57,7 @@ void addupa(int key, int value)
 
     while(myNode!=NULL)
     {
-        if(myNode->numar==key)
+        if(myNode->numar == key)
         {
             node *newNode = (node *) malloc(sizeof(node));
             newNode->numar = value;
@@ -71,7 +71,7 @@ void addupa(int key, int value)
         myNode = myNode->urm;
     }
 
-    if(flag==0)
+    if(flag == 0)
     {
         printf("Elementul nu a fost gasit!\n");
     }
@@ -86,17 +86,17 @@ void stergenumar(int value)
     printf("\nIntroduceti nodul pe care doriti sa-l stergeti: ");
     scanf("%d", &value);
 
-    if(value>contor)
+    if(value > contor)
     {
         printf("Valoarea nu exista in lista!\n");
         goto q;
     }
 
-    while(myNode!=NULL)
+    while(myNode != NULL)
     {
-        if(myNode->numar==value)
+        if(myNode->numar == value)
         {
-            if(previous==NULL)
+            if(previous == NULL)
             {
                 head = myNode->urm;
             }
@@ -113,7 +113,7 @@ void stergenumar(int value)
         myNode = myNode->urm;
     }
 
-    if(flag==0)
+    if(flag == 0)
     {
         printf("Nodul nu a fost gasit!\n");
     }
@@ -122,7 +122,7 @@ void stergenumar(int value)
 void afisarelista()
 {
     int medicament_list[100];
-    int y=0;
+    int y = 0;
     int n;
     node *myList;
     myList = head;
@@ -133,6 +133,7 @@ void afisarelista()
         myList = myList->urm;
         y++;
     }
+
     n = y;
     printf("\n\n\n");
 
@@ -205,6 +206,7 @@ void listenod()
     fclose(f);
 
     int key, value, x;
+    
     while(1)
     {
         printf("\n\n");
@@ -235,7 +237,7 @@ void listenod()
                 printf("Nod inceput: ");
                 scanf("%d", &value);
 
-                if(value>contor)
+                if(value > contor)
                 {
                     printf("Valoarea nu exista in lista!\n");
                     goto o;

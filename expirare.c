@@ -26,53 +26,20 @@ void expirare()
     {
         if((medicament.an)<anul)
         {
-            printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
-            i++,
-            medicament.nume,
-            medicament.tara,
-            medicament.pret,
-            medicament.zi,
-            medicament.luna,
-            medicament.an,
-            medicament.ID,
-            medicament.company,
-            medicament.mlgr);
-            printf(" -----------------------------------------------------------------------------------------------------------\n");
+            show_medicament(medicament);
         }
         else if((medicament.an)==anul)
         {
             if((medicament.luna)<luna)
             {
-                printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
-                i++,
-                medicament.nume,
-                medicament.tara,
-                medicament.pret,
-                medicament.zi,
-                medicament.luna,
-                medicament.an,
-                medicament.ID,
-                medicament.company,
-                medicament.mlgr);
-                printf(" -----------------------------------------------------------------------------------------------------------\n");
+                show_medicament(medicament);
             }
         }
         if((medicament.luna)==luna && (medicament.an)==anul)
         {
             if((medicament.zi)<=ziua)
             {
-                printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
-                i++,
-                medicament.nume,
-                medicament.tara,
-                medicament.pret,
-                medicament.zi,
-                medicament.luna,
-                medicament.an,
-                medicament.ID,
-                medicament.company,
-                medicament.mlgr);
-                printf(" -----------------------------------------------------------------------------------------------------------\n");
+                show_medicament(medicament);
             }
         }
         fread(&medicament, sizeof(medicament),1,f);

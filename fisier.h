@@ -24,14 +24,7 @@ typedef struct linked_list node;
 
 node *head=NULL, *last=NULL;
 
-int anul, lunaa, ziuaa, di, contor;
-int day, month, year, mg;
-float price;
-char pays[15];
-char nome[20];
-char comp[15];
-int i, n;
-int option;
+int i, n, contor, option;
 
 #include "show.c"
 #include "creare.c"

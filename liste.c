@@ -152,18 +152,7 @@ void afisarelista()
         {
             if(medicament_list[y] == i)
             {
-                printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
-                i++,
-                medicament.nume,
-                medicament.tara,
-                medicament.pret,
-                medicament.zi,
-                medicament.luna,
-                medicament.an,
-                medicament.ID,
-                medicament.company,
-                medicament.mlgr);
-                printf(" -----------------------------------------------------------------------------------------------------------\n");
+                show_medicament(medicament);
             }
             i++;
             fread(&medicament, sizeof(medicament),1,f);
@@ -175,39 +164,23 @@ void afisarelista()
 
 void listenod()
 {
-    f=fopen("fise.txt", "r");
-    printf("\n\n");
-    printf("                                      LISTA MEDICAMENTELOR \n");
-    printf(" -----------------------------------------------------------------------------------------------------------\n");
-    printf(" |  Nr  |     Medicament     |   Producator   |  Pret  |    Expira     |    ID   |   Compania   | Mlgm / Ml|\n");
-    printf(" ___________________________________________________________________________________________________________\n");
+    show_tabel();
     i = 1;
 
+    f = fopen("fise.txt", "r");
     fread(&medicament, sizeof(medicament), 1, f);
     while(!feof(f))
     {
-        printf(" |%4d  | %-18s | %-14s | %-6.2f |  %-2d  %2d  %-5d|   %3d   |    %-9s |   %-4d   |\n",
-        i++,
-        medicament.nume,
-        medicament.tara,
-        medicament.pret,
-        medicament.zi,
-        medicament.luna,
-        medicament.an,
-        medicament.ID,
-        medicament.company,
-        medicament.mlgr
-        );
+        show_medicament(medicament);
         fread(&medicament, sizeof(medicament),1,f);
-        printf(" -----------------------------------------------------------------------------------------------------------\n");
     }
-
     contor = i-1;
     fclose(f);
 
     int key, value, x;
+    bool quit = true;
     
-    while(1)
+    while(quit)
     {
         printf("\n\n");
         printf("          _______________________________   \n");
@@ -264,8 +237,10 @@ void listenod()
             case 5:
                 printf("\nNodul dupa care doriti sa introduceti alt nod: ");
                 scanf("%d", &key);
+
                 printf("\nIntroduceti un nod dupa %d:  ", key);
                 scanf("%d", &value);
+
                 addupa(key, value);
             break;
 
@@ -274,7 +249,7 @@ void listenod()
             break;
 
             case 0: 
-                exit(0);
+                quit = false;
             break;
 
             default: 

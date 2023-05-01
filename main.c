@@ -26,51 +26,29 @@ int main()
 
         switch(option)
         {
-            case 1: 
-                creare(); 
-                break;
+            case 1: creare(); break;
                 
-            case 2: 
-                afisare(); 
-                break;
+            case 2: afisare(); break;
 
-            case 3: 
-                selectare(); 
-                break;
+            case 3: selectare(); break;
 
-            case 4: 
-                expirare(); 
-                break;
+            case 4: expirare(); break;
 
-            case 5: 
-                stergere(); 
-                break;
+            case 5: stergere(); break;
 
-            case 6: 
-                country(); 
-                break;
+            case 6: country(); break;
 
-            case 7: 
-                edit(); 
-                break;
+            case 7: edit(); break;
 
-            case 8: 
-                sort();
-                break;
+            case 8: sort(); break;
 
-            case 9: 
-                listenod();
-                break;
+            case 9: listenod(); break;
 
-            case 0: 
-                exit(0);
-                break;
+            case 0: exit(0); break;
                 
-            default: 
-                printf("Alegeti optiunea corecta\n"); 
+            default: printf("Alegeti optiunea corecta\n"); 
                 break;
         }
     }
-
     return 0;
 }
